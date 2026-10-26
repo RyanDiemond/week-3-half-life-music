@@ -6,6 +6,7 @@ This is my schematic: it has a XIAO ESP32 S3 board, with a slider with two light
 <img width="1112" height="676" alt="image" src="https://github.com/user-attachments/assets/32e966ba-4d82-494b-8f3a-4ff067084a5f" />
 
 This is my PCB; It is a rectangle and I connected all connects with blue and red wires.
+<img width="852" height="622" alt="image" src="https://github.com/user-attachments/assets/1f2568cc-5709-4824-9556-d84da54adc87" />
 
 These are the details I added onto the PCB
 
