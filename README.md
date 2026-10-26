@@ -9,5 +9,6 @@ This is my PCB; It is a rectangle and I connected all connects with blue and red
 <img width="852" height="622" alt="image" src="https://github.com/user-attachments/assets/1f2568cc-5709-4824-9556-d84da54adc87" />
 
 These are the details I added onto the PCB
+<img width="731" height="632" alt="image" src="https://github.com/user-attachments/assets/d01a54f8-1fde-40b7-bbbf-1e653986bc47" />
 
 #BOM
