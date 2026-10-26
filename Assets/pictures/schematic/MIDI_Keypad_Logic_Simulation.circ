@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.0.0" version="1.0">
+  <lib name="0" desc="#Wiring"/>
+  <lib name="1" desc="#Gates"/>
+  <lib name="2" desc="#Plexers"/>
+  <lib name="3" desc="#Arithmetic"/>
+  <lib name="4" desc="#Memory"/>
+  <lib name="5" desc="#I/O"/>
+  <lib name="6" desc="#Base"/>
+  <main name="MIDI_Keypad_Logic"/>
+  <options><a name="gateUndefined" val="ignore"/><a name="simlimit" val="1000"/></options>
+  <mappings>
+    <tool lib="0" name="Pin" map="Button2"/>
+    <tool lib="0" name="Pin" map="Button3"/>
+  </mappings>
+  <toolbar>
+    <tool lib="0" name="Pin"/><tool lib="0" name="Probe"/><tool lib="1" name="AND Gate"/>
+  </toolbar>
+  <!-- Simulation scope and unsupported hardware:
+       The KiCad netlist describes connectivity only; it contains no firmware/behavioral logic.
+       XIAO ESP32-S3 is represented only by its connected GPIO nets, not by a CPU model.
+       SK6812MINI-E pixels are abstracted as serial data-chain pass-through test nets; RGB/PWM
+       timing and color decoding are not simulated. RV1 is represented as a 1-bit digital
+       stimulus, not an analog potentiometer. Power rails (+3V3, +5V) and GND are not modeled
+       as logic signals. Rotary encoder push switch S1/S2 are unconnected in the source netlist.
+       This file is a connectivity/logic test scaffold, not a faithful functional firmware model.
+  -->
+  <circuit name="MIDI_Keypad_Logic">
+    <a name="circuit" val="MIDI_Keypad_Logic"/>
+  <comp lib="0" name="Pin" loc="(100,100)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="SW1"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,100)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="SWITCH1"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,100)" to="(300,100)"/>
+  <comp lib="0" name="Pin" loc="(100,160)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="SW2"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,160)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="SWITCH2"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,160)" to="(300,160)"/>
+  <comp lib="0" name="Pin" loc="(100,220)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="Encoder A"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,220)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="ENC1_A"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,220)" to="(300,220)"/>
+  <comp lib="0" name="Pin" loc="(100,280)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="Encoder B"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,280)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="ENC1_B"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,280)" to="(300,280)"/>
+  <comp lib="0" name="Pin" loc="(100,340)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="Slider"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,340)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="SLIDE1"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,340)" to="(300,340)"/>
+  <comp lib="0" name="Pin" loc="(100,400)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="Touch 1"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,400)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="TOUCH1"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,400)" to="(300,400)"/>
+  <comp lib="0" name="Pin" loc="(100,460)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="Touch 2"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,460)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="TOUCH2"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,460)" to="(300,460)"/>
+  <comp lib="0" name="Pin" loc="(100,520)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="Touch 3"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,520)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="TOUCH3"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,520)" to="(300,520)"/>
+  <comp lib="0" name="Pin" loc="(100,580)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="Touch 4"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,580)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="TOUCH4"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,580)" to="(300,580)"/>
+  <comp lib="0" name="Pin" loc="(100,640)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="Touch 5"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,640)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="TOUCH5"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,640)" to="(300,640)"/>
+  <comp lib="0" name="Pin" loc="(100,740)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="LED_DATA"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,740)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="LED_DATA_PROBE"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,740)" to="(300,740)"/>
+  <comp lib="0" name="Pin" loc="(100,800)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="D3_DOUT_D4_DIN"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,800)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="D3_DOUT_D4_DIN_PROBE"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,800)" to="(300,800)"/>
+  <comp lib="0" name="Pin" loc="(100,860)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="D4_DOUT_D5_DIN"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,860)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="D4_DOUT_D5_DIN_PROBE"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,860)" to="(300,860)"/>
+  <comp lib="0" name="Pin" loc="(100,920)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="D5_DOUT_D6_DIN"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,920)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="D5_DOUT_D6_DIN_PROBE"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,920)" to="(300,920)"/>
+  <comp lib="0" name="Pin" loc="(100,980)">
+    <a name="facing" val="east"/><a name="output" val="false"/><a name="width" val="1"/><a name="label" val="D6_DOUT_UNCONNECTED"/><a name="labelloc" val="north"/>
+  </comp>
+  <comp lib="0" name="Pin" loc="(300,980)">
+    <a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="1"/><a name="label" val="D6_DOUT_UNCONNECTED_PROBE"/><a name="labelloc" val="north"/>
+  </comp>
+  <wire from="(100,980)" to="(300,980)"/>
+  </circuit>
+</project>
