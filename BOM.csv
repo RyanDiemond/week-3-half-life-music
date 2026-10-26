@@ -1,3 +1,4 @@
 Item,Qty,Supplier,Cost/item,Total Cost,link
 PCB,1,JLCPCB,$4.00,$4.00,https://cart.jlcpcb.com/shopcart/cart/
+XIAO ESP32-S3,1,Seeed studio,$8.49,$8.49,https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Pre-Soldered-p-6334.html
 Estimated total shipping,1,,,$0.00,
